@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro";
+import { experience } from "../data/site";
+---
+<Base title="Experience">
+  <div class="page-head"><span class="eyebrow">Experience</span><h2>Work and leadership timeline</h2><p>Internships and the roles I've held at IEEE-CIET, most recent first.</p></div>
+  <div class="timeline">
+    {experience.map((x) => (
+      <div class={x.now ? "tl now" : "tl"}>
+        <span class="when">{x.when}</span><h3>{x.title}</h3><p class="org">{x.org}</p>
+        <ul>{x.points.map((p) => <li set:html={p} />)}</ul>
+      </div>
+    ))}
+  </div>
+</Base>

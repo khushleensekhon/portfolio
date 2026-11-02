@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import { profile } from "../data/site";
+---
+<Base title="Resume">
+  <div class="page-head"><span class="eyebrow">Resume</span><h2>Resume at a glance</h2></div>
+  <div class="resume">
+    <div class="paper">
+      <div><h4>Experience</h4></div>
+      <div class="row"><b>GTM Intern · Recrivio</b><span>Jul 2026 – Present</span></div>
+      <div class="row"><b>Chairperson · IEEE-CIET</b><span>2025 – 2026</span></div>
+      <div class="row"><b>Project Manager Intern · Medoc Life</b><span>Dec 2024 – Mar 2025</span></div>
+      <div><h4>Education</h4></div>
+      <div class="row"><b>B.E. CSE · Chitkara University · CGPA 8.25</b><span>2023 – 2027</span></div>
+      <div><h4>Core skills</h4></div>
+      <p style="color:var(--muted)">SQL (MySQL, PostgreSQL), Excel &amp; Google Sheets, market research, requirement gathering, Python, Java, C++, JavaScript, React, Node.js, AWS, Git</p>
+    </div>
+    <div class="card" style="align-self:start"><span class="eyebrow">Full resume</span><h3>Khushleen Kaur Sekhon · PDF</h3><p>One page, updated November 2026.</p>
+      <div class="ctas" style="margin-top:6px"><a class="btn primary" href={profile.resume} download>Download</a><a class="btn" href={profile.resume} target="_blank" rel="noopener">View</a></div></div>
+  </div>
+  <object data={profile.resume} type="application/pdf" class="pdf" aria-label="Resume PDF">
+    <p>Your browser can't show the PDF here. <a href={profile.resume}>Open the resume</a>.</p>
+  </object>
+</Base>

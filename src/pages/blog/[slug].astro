@@ -1,0 +1,27 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort((a, b) => +b.data.date - +a.data.date);
+  return posts.map((post, i) => ({ params: { slug: post.id }, props: { post, next: posts[(i + 1) % posts.length] } }));
+}
+const { post, next } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const date = d.date.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+---
+<Base title={d.title} description={d.summary}>
+  <article class="article">
+    <a class="back" href="/blog">← All posts</a>
+    <span class="eyebrow">{d.category}</span>
+    <h2>{d.title}</h2>
+    <span class="byline">{`Khushleen Kaur Sekhon · ${date} · ${d.readingTime} min read`.toUpperCase()}</span>
+    {d.cover && <img class="cover" src={d.cover} alt="" />}
+    <div class="body"><Content /></div>
+    <div class="next">
+      <a class="back" href="/blog">← All posts</a>
+      {next && next.id !== post.id && <a class="back" href={`/blog/${next.id}`}>Next: {next.data.title} →</a>}
+    </div>
+  </article>
+</Base>

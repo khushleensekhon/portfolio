@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Blog admin · Khushleen Kaur Sekhon</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <!--
+    Blog admin. Open https://<your-site>/admin, log in with GitHub, write a post, click Publish.
+    Each published post is saved as a Markdown file in src/content/blog, and Vercel rebuilds the site in about a minute.
+    If you rename the GitHub repository, change REPO below.
+  -->
+  <script>window.CMS_MANUAL_INIT = true;</script>
+  <script src="https://unpkg.com/decap-cms@3.17.1/dist/decap-cms.js"></script>
+  <script>
+    const REPO = "khushleensekhon/portfolio";
+    CMS.init({
+      config: {
+        load_config_file: false,
+        backend: {
+          name: "github",
+          repo: REPO,
+          branch: "main",
+          base_url: window.location.origin,
+          auth_endpoint: "api/auth",
+          commit_messages: { create: "New post: {{slug}}", update: "Update post: {{slug}}", delete: "Delete post: {{slug}}", uploadMedia: "Upload {{path}}", deleteMedia: "Delete {{path}}" },
+        },
+        site_url: window.location.origin,
+        display_url: window.location.origin,
+        logo_url: "/favicon.svg",
+        media_folder: "public/images/blog",
+        public_folder: "/images/blog",
+        collections: [{
+          name: "blog",
+          label: "Blog posts",
+          label_singular: "Post",
+          description: "Write a post and click Publish. It appears on the site about a minute later.",
+          folder: "src/content/blog",
+          create: true,
+          slug: "{{slug}}",
+          extension: "md",
+          format: "frontmatter",
+          sortable_fields: ["date", "title"],
+          summary: "{{title}} · {{date}}",
+          preview_path: "blog/{{slug}}",
+          fields: [
+            { label: "Title", name: "title", widget: "string" },
+            { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "D MMM YYYY", time_format: false },
+            { label: "Category", name: "category", widget: "string", default: "Career", hint: "For example: Career · GTM, Leadership, Events" },
+            { label: "Summary", name: "summary", widget: "text", hint: "One or two sentences shown on the blog card." },
+            { label: "Reading time (minutes)", name: "readingTime", widget: "number", value_type: "int", min: 1, default: 4 },
+            { label: "Cover image", name: "cover", widget: "image", required: false },
+            { label: "Save as draft (hidden from site)", name: "draft", widget: "boolean", default: false },
+            { label: "Post", name: "body", widget: "markdown" },
+          ],
+        }],
+      },
+    });
+  </script>
+</body>
+</html>

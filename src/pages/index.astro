@@ -1,0 +1,72 @@
+---
+import Base from "../layouts/Base.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import PostCard from "../components/PostCard.astro";
+import { getCollection } from "astro:content";
+import { profile, stats, projects } from "../data/site";
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort((a, b) => +b.data.date - +a.data.date).slice(0, 2);
+---
+<Base>
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Go-to-Market · B2B SaaS · Product</span>
+      <h1>Khushleen <span class="grad">Kaur</span> Sekhon</h1>
+      <p class="role">{profile.role}</p>
+      <p class="lede">{profile.tagline}</p>
+      <div class="pills">{profile.focus.map((f) => <span class="pill">{f}</span>)}</div>
+      <div class="facts">
+        <div class="fact"><span>Location</span><p>{profile.location}</p></div>
+        <div class="fact"><span>Recognition</span><p>Rising Star, Recrivio 2026</p></div>
+      </div>
+      <div class="ctas">
+        <a class="btn primary" href="/experience">See my experience</a>
+        <a class="btn" href={profile.resume} download>Download resume</a>
+        <a class="btn" href="/contact">Contact me</a>
+      </div>
+    </div>
+    <figure class="portrait" style="margin:0">
+      <img src="/khushleen.jpg" alt="Khushleen Kaur Sekhon in a navy blazer" width="480" height="600">
+      <figcaption>Bengaluru · 2026</figcaption>
+    </figure>
+  </div>
+
+  <div class="stats" aria-label="Highlights">
+    {stats.map(([n, l]) => <div class="stat"><b class="grad">{n}</b><span>{l}</span></div>)}
+  </div>
+
+  <section class="block">
+    <div class="block-head"><div><span class="eyebrow">About me</span><h2>From code to go-to-market</h2></div><a class="more" href="/about">Read full story →</a></div>
+    <p style="color:var(--muted);max-width:70ch;font-size:17px">Computer Science student at Chitkara University, now working on B2B SaaS go-to-market at Recrivio. Three years with IEEE-CIET, ending as Chairperson, taught me to lead teams, manage budgets and ship events from plan to execution.</p>
+  </section>
+
+  <section class="block">
+    <div class="block-head"><div><span class="eyebrow">Experience</span><h2>Recent roles</h2></div><a class="more" href="/experience">Full experience →</a></div>
+    <div class="grid g3">
+      <div class="card"><span class="meta">Jul 2026 – Present</span><h3>GTM Intern</h3><p>Recrivio · Bengaluru</p></div>
+      <div class="card"><span class="meta">Jul 2025 – Aug 2026</span><h3>Chairperson</h3><p>IEEE-CIET Student Branch</p></div>
+      <div class="card"><span class="meta">Dec 2024 – Mar 2025</span><h3>Project Manager Intern</h3><p>Medoc Life</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head"><div><span class="eyebrow">Featured work</span><h2>Projects</h2></div><a class="more" href="/projects">All projects →</a></div>
+    <div class="grid g3">{projects.map((p) => <ProjectCard p={p} />)}</div>
+  </section>
+
+  <div class="grid g2">
+    <a class="card" href="/leadership" style="text-decoration:none"><span class="eyebrow">Leadership</span><h3>13+ events across three years at IEEE-CIET, from CodeSlam to Hackfest'25</h3><span class="link">See events →</span></a>
+    <a class="card" href="/certifications" style="text-decoration:none"><span class="eyebrow">Certifications</span><h3>9 credentials from Anthropic, IBM, Meta and Rice University</h3><span class="link">View certificates →</span></a>
+  </div>
+
+  <section class="block">
+    <div class="block-head"><div><span class="eyebrow">Writing</span><h2>From the blog</h2></div><a class="more" href="/blog">All posts →</a></div>
+    <div class="grid g2">{posts.map((p) => <PostCard post={p} />)}</div>
+  </section>
+
+  <div class="band">
+    <span class="eyebrow">Availability</span>
+    <h2>Currently open to GTM, business development and product roles.</h2>
+    <div><p>Immediate joiner. I bring an engineering foundation, hands-on GTM research and three years of leading teams.</p>
+      <div class="ctas"><a class="btn primary" href="/resume">View resume</a><a class="btn" href="/contact">Contact me</a><a class="btn" href={profile.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+  </div>
+</Base>

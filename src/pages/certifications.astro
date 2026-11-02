@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import { certs } from "../data/site";
+---
+<Base title="Certifications">
+  <div class="page-head"><span class="eyebrow">Certifications</span><h2>Licenses &amp; certifications</h2><p>Credential IDs are listed so they can be verified.</p></div>
+  <div class="grid g2">
+    {certs.map(([mark, name, issuer, date, id]) => (
+      <div class="card cert"><div class="issuer">{mark}</div>
+        <div style="display:grid;gap:4px;min-width:0"><h3 style="font-size:17px">{name}</h3>
+          <span class="meta">{issuer} · {date}{id ? ` · ID ${id}` : ""}</span></div></div>
+    ))}
+  </div>
+</Base>

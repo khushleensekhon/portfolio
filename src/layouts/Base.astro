@@ -1,0 +1,65 @@
+---
+import "../styles/global.css";
+
+interface Props { title?: string; description?: string; }
+const {
+  title,
+  description = "Khushleen Kaur Sekhon: GTM Intern at Recrivio and former Chairperson of IEEE-CIET. B2B SaaS go-to-market, business development, product and leadership.",
+} = Astro.props;
+const fullTitle = title ? `${title} · Khushleen Kaur Sekhon` : "Khushleen Kaur Sekhon · GTM, Business & Product";
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const nav = [
+  ["/", "Home"], ["/about", "About"], ["/experience", "Experience"], ["/leadership", "Leadership"],
+  ["/projects", "Projects"], ["/skills", "Skills"], ["/certifications", "Certifications"],
+  ["/gallery", "Gallery"], ["/blog", "Blog"], ["/resume", "Resume"], ["/contact", "Contact"],
+];
+const isActive = (href: string) => (href === "/" ? path === "/" : path === href || path.startsWith(href + "/"));
+const ogImage = new URL("/khushleen.jpg", Astro.site);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  <meta name="author" content="Khushleen Kaur Sekhon">
+  <meta name="theme-color" content="#06080c">
+  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)}>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content={fullTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/"><span class="mono-mark">KS</span><span><b>Khushleen Sekhon</b><small>Go-to-Market · Product</small></span></a>
+      <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="links">Menu</button>
+      <div class="links" id="links">
+        {nav.map(([href, label]) => <a href={href} aria-current={isActive(href) ? "page" : undefined}>{label}</a>)}
+      </div>
+    </nav>
+  </header>
+  <main class="wrap">
+    <div class="page"><slot /></div>
+  </main>
+  <footer class="wrap">
+    <span>© {new Date().getFullYear()} Khushleen Kaur Sekhon</span>
+    <span><a href="https://www.linkedin.com/in/khushleensekhon/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/khushleensekhon" target="_blank" rel="noopener">GitHub</a> · Bengaluru</span>
+  </footer>
+  <script>
+    const btn = document.getElementById("menuBtn");
+    const links = document.getElementById("links");
+    btn?.addEventListener("click", () => {
+      const open = links!.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  </script>
+</body>
+</html>

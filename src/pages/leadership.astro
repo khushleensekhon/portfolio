@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import { tenures } from "../data/site";
+---
+<Base title="Leadership & Events">
+  <div class="page-head"><span class="eyebrow">Leadership &amp; events</span><h2>Three years at IEEE-CIET</h2><p>From organising executive to WIE Vice Chairperson to Chairperson of a branch with 500+ active members and 20+ events a year.</p></div>
+  <div class="stats" aria-label="IEEE-CIET at a glance">
+    <div class="stat"><b class="grad">3</b><span>years on the core team, 2023 – 2026</span></div>
+    <div class="stat"><b class="grad">13+</b><span>events I helped organise</span></div>
+    <div class="stat"><b class="grad">500+</b><span>active members in the branch</span></div>
+    <div class="stat"><b class="grad">20+</b><span>member core team led as Chairperson</span></div>
+  </div>
+  <div style="display:grid;gap:44px">
+    {tenures.map((g) => (
+      <div class="tenure">
+        <div class="tenure-head"><h3>{g.role}</h3><span>{g.years}</span></div>
+        <div class="grid g3">
+          {g.ev.map(([name, when, desc, tags]) => (
+            <div class="card"><span class="meta">{when.toUpperCase()}</span><h3>{name}</h3><p>{desc}</p>
+              <div class="tags">{tags.map((t) => <span class="tag">{t}</span>)}</div></div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</Base>

@@ -1,0 +1,13 @@
+---
+import type { CollectionEntry } from "astro:content";
+interface Props { post: CollectionEntry<"blog"> }
+const { post } = Astro.props;
+const d = post.data;
+const date = d.date.toLocaleDateString("en-IN", { month: "short", year: "numeric" });
+---
+<a class="card post" href={`/blog/${post.id}`}>
+  <span class="meta">{`${d.category} · ${date} · ${d.readingTime} min read`.toUpperCase()}</span>
+  <h3>{d.title}</h3>
+  <p>{d.summary}</p>
+  <span class="read">Read post →</span>
+</a>

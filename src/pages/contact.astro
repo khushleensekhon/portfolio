@@ -1,0 +1,68 @@
+---
+import Base from "../layouts/Base.astro";
+import { profile } from "../data/site";
+// Messages from this form are delivered to the email you registered at web3forms.com.
+const key = import.meta.env.PUBLIC_WEB3FORMS_KEY || "";
+---
+<Base title="Contact">
+  <div class="page-head"><span class="eyebrow">Contact</span><h2>Let's <span class="grad">talk</span></h2><p>Open to GTM, business development and product roles. I reply within a day.</p></div>
+  <div class="contact">
+    <div class="card">
+      <div class="cline"><div><span>Email</span><br><b id="em">{profile.email}</b></div><button class="copy" data-copy="em">Copy</button></div>
+      <div class="cline"><div><span>Phone</span><br><b id="ph">{profile.phone}</b></div><button class="copy" data-copy="ph">Copy</button></div>
+      <div class="cline"><div><span>LinkedIn</span><br><b>in/khushleensekhon</b></div><a class="copy" href={profile.linkedin} target="_blank" rel="noopener" style="text-decoration:none">Open ↗</a></div>
+      <div class="cline"><div><span>GitHub</span><br><b>khushleensekhon</b></div><a class="copy" href={profile.github} target="_blank" rel="noopener" style="text-decoration:none">Open ↗</a></div>
+      <div class="cline"><div><span>Based in</span><br><b>Bengaluru, India</b></div></div>
+    </div>
+    <form class="card" id="cform" data-key={key}>
+      <label for="cf-name">Your name<input id="cf-name" name="name" required autocomplete="name" placeholder="Priya Sharma"></label>
+      <label for="cf-mail">Email<input id="cf-mail" name="email" type="email" required autocomplete="email" placeholder="priya@company.com"></label>
+      <label for="cf-msg">Message<textarea id="cf-msg" name="message" required placeholder="Hi Khushleen, we're hiring for a GTM role…"></textarea></label>
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn primary" type="submit" id="cf-send" style="justify-self:start">Send message</button>
+      <p class="note" id="cnote" role="status" hidden></p>
+    </form>
+  </div>
+</Base>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-copy]").forEach((b) =>
+    b.addEventListener("click", async () => {
+      const el = document.getElementById(b.dataset.copy!)!;
+      try { await navigator.clipboard.writeText(el.textContent || ""); b.textContent = "Copied"; }
+      catch { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s?.removeAllRanges(); s?.addRange(r); b.textContent = "Selected"; }
+      setTimeout(() => (b.textContent = "Copy"), 1600);
+    })
+  );
+
+  const form = document.getElementById("cform") as HTMLFormElement;
+  const note = document.getElementById("cnote")!;
+  const send = document.getElementById("cf-send") as HTMLButtonElement;
+  const say = (msg: string, ok = true) => { note.hidden = false; note.textContent = msg; note.style.color = ok ? "" : "#e88"; };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const key = form.dataset.key;
+    if (!key) { say("The contact form isn't connected yet. Please email sekhonkhushleen@gmail.com directly.", false); return; }
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    send.disabled = true; send.textContent = "Sending…";
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: key,
+          subject: `Portfolio message from ${data.name}`,
+          from_name: "Khushleen's portfolio",
+          replyto: data.email,
+          ...data,
+        }),
+      });
+      const out = await res.json();
+      if (out.success) { form.reset(); say("Thanks, your message was sent. I'll reply within a day."); }
+      else say(`Couldn't send: ${out.message || "please try again"}. You can also email sekhonkhushleen@gmail.com.`, false);
+    } catch {
+      say("Couldn't reach the mail service. Check your connection, or email sekhonkhushleen@gmail.com.", false);
+    } finally { send.disabled = false; send.textContent = "Send message"; }
+  });
+</script>

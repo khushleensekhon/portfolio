@@ -1,0 +1,11 @@
+---
+interface Props { p: { t: string; y: string; d: string; tags: string[]; l: string; lt: string } }
+const { p } = Astro.props;
+---
+<div class="card">
+  <span class="meta">{p.y}</span>
+  <h3>{p.t}</h3>
+  <p>{p.d}</p>
+  <div class="tags">{p.tags.map((x) => <span class="tag">{x}</span>)}</div>
+  <a class="link" href={p.l} target="_blank" rel="noopener">{p.lt} ↗</a>
+</div>

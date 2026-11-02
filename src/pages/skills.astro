@@ -1,0 +1,10 @@
+---
+import Base from "../layouts/Base.astro";
+import { skills } from "../data/site";
+---
+<Base title="Skills">
+  <div class="page-head"><span class="eyebrow">Skills</span><h2>What I bring to the table</h2></div>
+  <div class="grid g2">
+    {skills.map(([h, list]) => <div class="card"><h3>{h}</h3><div class="chips">{list.map((x) => <span class="chip">{x}</span>)}</div></div>)}
+  </div>
+</Base>
