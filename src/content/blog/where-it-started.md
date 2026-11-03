@@ -1,23 +1,23 @@
 ---
 title: "Where it started: from organising executive to WIE Vice Chairperson"
-date: 2024-07-20
+date: 2024-09-20
 category: "Leadership · WIE"
-summary: "My first year at IEEE-CIET, a debate competition, an entrepreneurship session and the appointment letter that changed my plans."
+summary: "My first year at IEEE-CIET, India's largest Web3 hackathon on our campus, and the appointment that changed my plans."
 readingTime: 4
 ---
 
 I joined the IEEE-CIET core team in 2023 as an **organising executive**. I didn't run anything yet. I carried chairs, chased registrations and watched my seniors make decisions.
 
-### Small events teach the basics
+### Seeing a big event up close
 
-On **31 January 2024** we hosted **From Idea to Impact: A Young Entrepreneur's Guide** with the CSE department. On **13 March 2024** we ran the **EmpowerHer Debate** with WIE. Neither was huge, but both taught me what an event really needs: a clear audience, a run-sheet and people who own each part.
+In 2024, Chitkara hosted **HackIndia 2024**, India's largest Web3 hackathon, organised by the CSE department with the Chitkara ACM Student Chapter, Coding Blocks CIET and IEEE-CIET. Working on it showed me how much sits behind an event that size: partners to coordinate, teams to brief and a schedule that cannot slip. It was the moment I wanted to lead one myself.
 
-### Watching good seniors
+### Learning from good seniors
 
-My seniors mentored me through both events, and I helped with HackIndia 2024, India's largest Web3 hackathon, hosted on campus. Seeing a big event up close made me want to lead one.
+My seniors let me take small jobs first and then bigger ones. They never handed over the whole plan, but they always explained why a decision was made. That habit of explaining the "why" is the one I tried hardest to copy later.
 
 ### The appointment letter
 
-In July 2024 I received my appointment as **WIE Vice Chairperson**. We opened the tenure with an orientation and a guest talk from Utkarsh Luthra. A year later I became Chairperson of the branch.
+In July 2024 I received my appointment as **WIE Vice Chairperson**. We opened the tenure with an orientation and a guest talk from Utkarsh Luthra. Two months later we ran **CodeSlam**, a two-day contest for 32 teams, and a year after that I became Chairperson of the branch.
 
 > **Takeaway:** say yes to the small jobs. They teach you how big events actually run.

@@ -49,13 +49,13 @@ export const experience = [
   {
     when: "JUL 2024 – SEP 2025 · LEADERSHIP", title: "WIE Vice Chairperson", org: "IEEE Women in Engineering, CIET",
     points: [
-      "Drove Women in Engineering initiatives with the WIE Affinity Group: Hack With Her 4.0, Somnium and The Wall Street.",
+      "Drove Women in Engineering initiatives with the WIE Affinity Group: Hack With Her 4.0 and Somnium.",
       "Part of the team behind Hackfest'25, a national-level hackathon with SAP Labs India and Coding Blocks.",
     ],
   },
   {
     when: "SEP 2023 – JUL 2024 · LEADERSHIP", title: "Organising Executive", org: "IEEE-CIET Student Branch",
-    points: ["Organised HackIndia 2024, the EmpowerHer Debate and the From Idea to Impact entrepreneurship session."],
+    points: ["Helped organise HackIndia 2024, India's largest Web3 hackathon, hosted at Chitkara University."],
   },
 ];
 
@@ -87,27 +87,21 @@ export const certs = [
 export const tenures = [
   { role: "Chairperson, IEEE-CIET", years: "JUL 2025 – AUG 2026", ev: [
     ["Triggered", "7 Aug 2025 · Pierre Hall", "Logic, reasoning and problem-solving through coding challenges, rapid-fire quizzes and squad-vs-squad rounds.", ["Coding", "Strategy", "Teamwork"]],
-    ["Infraverse", "20 Aug 2025", "Tech Society event for the new academic year.", ["Tech Society"]],
     ["Branch leadership", "2025 – 26", "10+ events, 3+ hackathons, 1,000+ students reached, a 20+ member core team and full budget ownership.", ["Chairperson"]],
   ]},
   { role: "WIE Vice Chairperson", years: "JUL 2024 – SEP 2025", ev: [
     ["Hackfest'25", "6 May 2025 · National level", "National hackathon where teams pitched ideas for real technology and business problems, with SAP Labs India and Coding Blocks.", ["Hackathon", "Pitching"]],
-    ["Suits & Syntax", "17 Apr 2025", "Two-round contest testing analysis, coding and public speaking, run with the IE(I) CSE Student Chapter.", ["Critical thinking", "Debate"]],
     ["Hack With Her 4.0", "5 – 6 Mar 2025 · 30 hours", "Overnight hackathon for women in tech with the CSE department, mentored by Edifecs.", ["WIE", "Hackathon"]],
     ["Somnium", "24 Feb 2025", "Tech simulation where students competed in real tech-industry roles, run with the WIE Affinity Group.", ["WIE", "Simulation"]],
     ["The Code Express", "7 Feb 2025", "Puzzles and logic challenges built to sharpen critical thinking.", ["Puzzles", "Logic"]],
-    ["The Wall Street", "14 Oct 2024 · 20 teams", "Stock market simulation across 3 rounds: IPO coding, a Broker's Gambit negotiation and a Roulette of Risks.", ["WIE", "Simulation"]],
     ["CodeSlam", "15 – 16 Sep 2024 · 32 teams", "Clash of Clans-themed contest: front-end round on Day 1, knockout coding relay for the top 16 on Day 2.", ["Lead organiser"]],
-    ["IEEE-PL: The Critical Think Off", "2024 · Members only", "IPL auction with a ₹120 Cr budget, quiz-earned bonuses, two trade windows, press releases and a press conference.", ["Strategy"]],
   ]},
   { role: "Organising Executive", years: "SEP 2023 – JUL 2024", ev: [
     ["HackIndia 2024", "2024 · Web3", "India's largest Web3 hackathon, hosted at Chitkara with the ACM chapter and Coding Blocks.", ["Co-host"]],
-    ["EmpowerHer Debate", "13 Mar 2024", "Debate competition with WIE on topics that matter to women in tech.", ["WIE", "Debate"]],
-    ["From Idea to Impact", "31 Jan 2024", "Session on turning ideas into ventures: a young entrepreneur's guide, with the CSE department.", ["Entrepreneurship"]],
   ]},
 ] as { role: string; years: string; ev: [string, string, string, string[]][] }[];
 
 export const gallery = [
-  "Hack With Her 4.0 team photo", "CodeSlam 2024", "The Wall Street", "IEEE-PL auction",
+  "Hack With Her 4.0 team photo", "CodeSlam 2024", "Hackfest'25", "Triggered",
   "WIE orientation", "Recrivio", "HackIndia 2024",
 ];

@@ -1,27 +1,27 @@
 ---
-title: "Designing student events people remember: CodeSlam, The Wall Street and IEEE-PL"
-date: 2024-12-10
+title: "Designing student events people remember: CodeSlam, Somnium and Triggered"
+date: 2025-08-20
 category: "Events · Strategy"
-summary: "How themes, scoring rules and small rewards turned ordinary coding contests into events people talked about."
+summary: "How a theme, a role to play and squad-vs-squad rounds turned ordinary coding contests into events people talked about."
 readingTime: 5
 ---
 
-Most college tech events look the same: a problem set, a timer and a results list. At IEEE-CIET we asked a different question: what would make someone want to come back next time? Three events shaped my answer.
+Most college tech events look the same: a problem set, a timer and a results list. At IEEE-CIET we kept asking a different question: what would make someone want to come back next time? Four events shaped my answer.
 
 ### CodeSlam: a theme gives you a story
 
-CodeSlam was themed around **Clash of Clans**. Day 1 tested front-end skills across **32 teams**, and the top 16 moved to a knockout coding relay on Day 2. The theme made eliminations feel like battles instead of a scoreboard.
+CodeSlam, on **15–16 September 2024**, was themed around **Clash of Clans**. Day 1 tested front-end skills across **32 teams**, and the top 16 moved to a knockout coding relay on Day 2. The theme turned eliminations into battles instead of a scoreboard, and the relay meant every team member had to deliver, not just the strongest coder.
 
-### The Wall Street: mechanics create decisions
+### The Code Express: make thinking the main event
 
-We built a stock market simulation for **20 teams of 3** across three rounds: an IPO round of coding questions, a Broker's Gambit that mixed coding with negotiation, and a final Roulette of Risks. A bonus for teams that finished early made every round a trade-off between speed and accuracy.
+**The Code Express** in February 2025 swapped long coding problems for puzzles and logic challenges. Not everyone in the room was a strong programmer, but everyone could reason. Lowering the barrier brought in students who would never sign up for a typical contest.
 
-### IEEE-PL: strategy beats knowledge
+### Somnium: give people a role, not just a problem
 
-IEEE-PL was an IPL auction with a **₹120 crore** virtual budget. A tech and cricket quiz earned teams extra budget, there were two trade windows, and every team had to write a press release and face a press conference. Teams had to justify their choices, not just make them.
+**Somnium**, run with the WIE Affinity Group on **24 February 2025**, was a tech simulation where students competed in real tech-industry roles. Playing a role changed how teams worked. They argued about priorities and trade-offs the way a real product team would, instead of racing to one right answer.
 
-### The pattern held across the next year
+### Triggered: build rounds around teamwork
 
-We kept using the same idea in 2025: **Somnium** put students into real tech-industry roles, **Suits & Syntax** mixed coding with group discussion and public speaking, and **Triggered** ran squad-vs-squad rounds built around strategy.
+**Triggered**, on **7 August 2025** in Pierre Hall, was my first event as Chairperson. It mixed coding challenges, rapid-fire quizzing and squad-vs-squad rounds. Changing the format every round kept energy up and meant no single skill could carry a team.
 
-> **Takeaway:** engagement comes from design. A good theme, clear rules and real trade-offs do more than a bigger prize.
+> **Takeaway:** engagement comes from design. A good theme, a role to play and rounds that need the whole team do more than a bigger prize.

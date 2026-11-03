@@ -22,6 +22,6 @@ We tracked registrations, attendance and feedback in Google Sheets for events re
 
 ### Thinking bigger
 
-The branch grew to **500+ active members** and 20+ events a year. Events like **Hackfest'25**, a national-level hackathon with SAP Labs India and Coding Blocks, showed what a student team can pull off with the right partners. My year as Chair opened with **Triggered** and **Infraverse** in August 2025.
+The branch grew to **500+ active members** and 20+ events a year. Events like **Hackfest'25**, a national-level hackathon with SAP Labs India and Coding Blocks, showed what a student team can pull off with the right partners. My year as Chair opened with **Triggered** in August 2025.
 
 > **Takeaway:** being Chairperson felt like running a small company: people, money, customers and results, with a new team every year.
