@@ -3,7 +3,10 @@ import Base from "../layouts/Base.astro";
 import { profile } from "../data/site";
 // Messages from this form are delivered to the email you registered at web3forms.com.
 // Web3Forms access keys are public by design: they can only send messages to your inbox.
-const key = import.meta.env.PUBLIC_WEB3FORMS_KEY || "ba4edf2a-2464-471b-bec0-892526229b8c";
+const FORM_KEY = "ba4edf2a-2464-471b-bec0-892526229b8c";
+const envKey = String(import.meta.env.PUBLIC_WEB3FORMS_KEY || "").trim().replace(/^["']|["']$/g, "");
+const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const key = isUuid.test(envKey) ? envKey : FORM_KEY;
 ---
 <Base title="Contact">
   <div class="page-head"><span class="eyebrow">Contact</span><h2>Let's <span class="grad">talk</span></h2><p>Open to GTM, business development and product roles. I reply within a day.</p></div>
