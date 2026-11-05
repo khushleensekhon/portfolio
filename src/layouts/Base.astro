@@ -9,9 +9,9 @@ const {
 const fullTitle = title ? `${title} · Khushleen Kaur Sekhon` : "Khushleen Kaur Sekhon · GTM, Business & Product";
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const nav = [
-  ["/", "Home"], ["/about", "About"], ["/experience", "Experience"], ["/leadership", "Leadership"],
+  ["/", "Home"], ["/about", "About"], ["/experience", "Experience"],
   ["/projects", "Projects"], ["/skills", "Skills"], ["/certifications", "Certifications"],
-  ["/gallery", "Gallery"], ["/blog", "Blog"], ["/resume", "Resume"], ["/contact", "Contact"],
+  ["/blog", "Blog"], ["/resume", "Resume"], ["/contact", "Contact"],
 ];
 const isActive = (href: string) => (href === "/" ? path === "/" : path === href || path.startsWith(href + "/"));
 const ogImage = new URL("/khushleen.jpg", Astro.site);

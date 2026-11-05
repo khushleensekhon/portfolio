@@ -211,3 +211,7 @@ footer a{color:var(--muted);text-decoration:none}footer a:hover{color:var(--acce
 .article .body blockquote p{margin:0}
 .article .cover{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line)}
 .empty{border:1px dashed var(--line);padding:28px;color:var(--muted);text-align:center}
+
+.role-points{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:6px;max-width:72ch}
+.role-points strong{color:var(--fg)}
+.tenure-head h3{font-size:22px}

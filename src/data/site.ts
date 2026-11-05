@@ -87,7 +87,6 @@ export const certs = [
 export const tenures = [
   { role: "Chairperson, IEEE-CIET", years: "JUL 2025 – AUG 2026", ev: [
     ["Triggered", "7 Aug 2025 · Pierre Hall", "Logic, reasoning and problem-solving through coding challenges, rapid-fire quizzes and squad-vs-squad rounds.", ["Coding", "Strategy", "Teamwork"]],
-    ["Branch leadership", "2025 – 26", "10+ events, 3+ hackathons, 1,000+ students reached, a 20+ member core team and full budget ownership.", ["Chairperson"]],
   ]},
   { role: "WIE Vice Chairperson", years: "JUL 2024 – SEP 2025", ev: [
     ["Hackfest'25", "6 May 2025 · National level", "National hackathon where teams pitched ideas for real technology and business problems, with SAP Labs India and Coding Blocks.", ["Hackathon", "Pitching"]],
@@ -100,8 +99,3 @@ export const tenures = [
     ["HackIndia 2024", "2024 · Web3", "India's largest Web3 hackathon, hosted at Chitkara with the ACM chapter and Coding Blocks.", ["Co-host"]],
   ]},
 ] as { role: string; years: string; ev: [string, string, string, string[]][] }[];
-
-export const gallery = [
-  "Hack With Her 4.0 team photo", "CodeSlam 2024", "Hackfest'25", "Triggered",
-  "WIE orientation", "Recrivio", "HackIndia 2024",
-];

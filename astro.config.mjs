@@ -7,4 +7,8 @@ export default defineConfig({
   site: process.env.SITE_URL || "https://khushleensekhon.vercel.app",
   output: "static",
   adapter: vercel(),
+  redirects: {
+    "/leadership": "/experience#leadership",
+    "/gallery": "/",
+  },
 });

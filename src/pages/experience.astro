@@ -1,15 +1,56 @@
 ---
 import Base from "../layouts/Base.astro";
-import { experience } from "../data/site";
+import { experience, tenures } from "../data/site";
+
+// Work = internships; Leadership = IEEE-CIET roles, each shown with the events from that tenure.
+const work = experience.filter((x) => !x.when.includes("LEADERSHIP"));
+const lead = experience
+  .filter((x) => x.when.includes("LEADERSHIP"))
+  .map((x) => ({ ...x, events: tenures.find((t) => t.role.startsWith(x.title))?.ev ?? [] }));
 ---
-<Base title="Experience">
-  <div class="page-head"><span class="eyebrow">Experience</span><h2>Work and leadership timeline</h2><p>Internships and the roles I've held at IEEE-CIET, most recent first.</p></div>
-  <div class="timeline">
-    {experience.map((x) => (
-      <div class={x.now ? "tl now" : "tl"}>
-        <span class="when">{x.when}</span><h3>{x.title}</h3><p class="org">{x.org}</p>
-        <ul>{x.points.map((p) => <li set:html={p} />)}</ul>
-      </div>
-    ))}
+<Base title="Experience & Leadership">
+  <div class="page-head">
+    <span class="eyebrow">Experience &amp; leadership</span>
+    <h2>Where I've worked and led</h2>
+    <p>Internships in go-to-market and project management, and three years leading IEEE-CIET, most recent first.</p>
   </div>
+
+  <section class="block" id="work">
+    <div class="block-head"><div><span class="eyebrow">Work experience</span><h2>Internships</h2></div></div>
+    <div class="timeline">
+      {work.map((x) => (
+        <div class={x.now ? "tl now" : "tl"}>
+          <span class="when">{x.when}</span><h3>{x.title}</h3><p class="org">{x.org}</p>
+          <ul>{x.points.map((p) => <li set:html={p} />)}</ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="block" id="leadership">
+    <div class="block-head"><div><span class="eyebrow">Leadership</span><h2>Three years at IEEE-CIET</h2></div></div>
+    <p style="color:var(--muted);max-width:70ch">From organising executive to WIE Vice Chairperson to Chairperson of a branch with 500+ active members and 20+ events a year.</p>
+    <div class="stats" aria-label="IEEE-CIET at a glance">
+      <div class="stat"><b class="grad">3</b><span>years on the core team, 2023 – 2026</span></div>
+      <div class="stat"><b class="grad">7</b><span>featured events I helped organise</span></div>
+      <div class="stat"><b class="grad">500+</b><span>active members in the branch</span></div>
+      <div class="stat"><b class="grad">20+</b><span>member core team led as Chairperson</span></div>
+    </div>
+    <div style="display:grid;gap:48px;margin-top:12px">
+      {lead.map((x) => (
+        <div class="tenure">
+          <div class="tenure-head"><div><h3>{x.title}</h3><p class="org" style="margin-top:4px;color:var(--muted)">{x.org}</p></div><span>{x.when.replace(" · LEADERSHIP", "")}</span></div>
+          <ul class="role-points">{x.points.map((p) => <li set:html={p} />)}</ul>
+          {x.events.length > 0 && (
+            <div class={x.events.length === 2 ? "grid g2" : "grid g3"}>
+              {x.events.map(([name, when, desc, tags]) => (
+                <div class="card"><span class="meta">{when.toUpperCase()}</span><h3>{name}</h3><p>{desc}</p>
+                  <div class="tags">{tags.map((t) => <span class="tag">{t}</span>)}</div></div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
 </Base>
