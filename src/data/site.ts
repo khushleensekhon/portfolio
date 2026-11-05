@@ -25,24 +25,27 @@ export const experience = [
   {
     when: "JUL 2026 – PRESENT · INTERNSHIP", now: true, title: "GTM Intern", org: "Recrivio (B2B SaaS) · Bengaluru",
     points: [
-      "Researched 120+ companies and segmented them by hiring and background-verification needs to define target customer segments for Recrivio's B2B SaaS positioning.",
+      "Researched 120+ companies and segmented them by hiring and background-verification needs to define target segments.",
       "Built buyer personas and a structured prioritisation of prospects, focusing outreach on the highest-fit opportunities.",
-      "Synthesised market research and prospect feedback into actionable recommendations that informed go-to-market strategy.",
+      "Delivered product demos to prospective clients and converted them into paying customers, contributing directly to company revenue.",
+      "Synthesised market research and prospect feedback into go-to-market recommendations, and presented the findings to the team.",
       "<strong>Recognised with the Rising Star award</strong> at Recrivio (Nov 2026).",
     ],
   },
   {
     when: "JUL 2025 – AUG 2026 · LEADERSHIP", title: "Chairperson", org: "IEEE-CIET Student Branch, Chitkara University",
     points: [
-      "Led a 20+ member core team across functions to run 3+ hackathons and 10+ technical and non-technical events reaching 1,000+ students, owning everything from budgeting to execution.",
+      "Led a 20+ member cross-functional team (tech, design, marketing, sponsorships) to run 3+ hackathons and 10+ technical and non-technical events reaching 1,000+ students, owning everything from budgeting to execution.",
       "Analysed registration, attendance and feedback data across events to track turnout trends and use them to shape planning decisions.",
+      "Delivered technical talks and workshops, and pitched and presented projects at hackathons and faculty reviews.",
     ],
   },
   {
     when: "DEC 2024 – MAR 2025 · INTERNSHIP", title: "Project Manager Intern", org: "Medoc Life",
     points: [
-      "Mapped client requirements and operational workflows to identify process gaps, translating findings into structured project deliverables.",
-      "Worked with backend workflows using Postman and internal frameworks to diagnose issues blocking delivery and keep execution on track.",
+      "Gathered client requirements and mapped operational workflows to identify process gaps, translating findings into structured project deliverables.",
+      "Coordinated between clients and the development team to prioritise requirements and track deliverables against timelines.",
+      "Tested backend workflows using Postman and internal frameworks to diagnose issues blocking delivery and keep execution on track.",
     ],
   },
   {
@@ -61,6 +64,12 @@ export const experience = [
 export type Project = { t: string; y: string; d: string; points?: string[]; tags: string[]; l?: string; lt?: string };
 
 export const projects: Project[] = [
+  { t: "Samjho", y: "Nov 2026", d: "AI explainer for official documents: photograph a bill, bank letter or government notice and get it explained in Punjabi, Hindi or English.",
+    points: [
+      "Found that families with first-time digital users rely on one member to read bills, bank letters and government notices; interviewed families to define four core jobs: what is it, what to do, by when, and is it a scam.",
+      "Built and launched a multimodal web app where Gemini explains any photographed paper, with voice read-back, deadline reminders and one-tap sharing with family on WhatsApp.",
+      "Measured quality on real household documents (type, amount, deadline, scam detection) and in-app feedback, iterated on prompts, and built in privacy safeguards (no photo storage, masked account numbers).",
+    ], tags: ["User research", "Multimodal AI", "React", "Node.js", "Gemini API"], l: "https://khushleensekhon.github.io/Samjho/", lt: "Live site" },
   { t: "PayFirst", y: "Nov 2026", d: "Voice-first payment helper for first-time UPI users: pay by voice in Hindi or Punjabi, with spoken confirmation and an AI scam checker.",
     points: [
       "Interviewed first-time UPI users in Tier-3 India and found fear of payment errors, English-only interfaces and scams were the top blockers; defined the MVP in a PRD.",
@@ -70,25 +79,24 @@ export const projects: Project[] = [
   { t: "Smart Email Assistant", y: "2026", d: "AI assistant that classifies email tone and writes context-aware replies, so professionals spend less time on routine responses.",
     points: [
       "Identified that professionals lose time writing routine replies in the right tone; defined and built an assistant that classifies tone and generates context-aware replies.",
-      "Built tone classification on domain-specific email datasets, plus a prompt-engineering and evaluation pipeline to measure and improve reply quality.",
-      "Shipped end to end with structured fallback handling so the product stays reliable during API failures.",
-    ], tags: ["React", "Spring Boot", "Hibernate", "MySQL", "Gemini API"], l: "https://github.com/khushleensekhon", lt: "GitHub" },
+      "Built tone classification on domain-specific email data and an evaluation pipeline to improve reply quality; shipped end to end with fallback handling for API failures.",
+    ], tags: ["React", "Spring Boot", "MySQL", "Gemini API"], l: "https://github.com/khushleensekhon/Final_SmartEmailAssistant", lt: "GitHub" },
   { t: "BorrowBox", y: "2025", d: "Peer-to-peer platform for students to lend and borrow items on campus, owned from requirements to launch.",
     points: [
       "Saw that students had no trusted way to lend and borrow items on campus; defined the MVP and owned the product lifecycle from requirements to launch on Vercel.",
-      "Built real-time request status updates (WebSockets), secure accounts (JWT) and activity tracking and reporting.",
+      "Built real-time request tracking (WebSockets) and secure accounts (JWT) on a React, Node.js and SQL stack.",
     ], tags: ["React", "Node.js", "SQL", "WebSockets", "JWT"], l: "https://borrowbox-plum.vercel.app", lt: "Live site" },
   { t: "Haazri", y: "2024 – 25", d: "Attendance management system with role-based access and real-time tracking, shaped by research into how teachers take attendance.",
     tags: ["Full-stack", "RBAC", "Real-time"], l: "https://github.com/coderharpuneet/Haazri", lt: "GitHub" },
 ];
 
 export const skills: [string, string[]][] = [
-  ["Product", ["User research", "Requirement gathering", "PRDs", "Prioritisation", "Metrics & KPIs", "Hypothesis testing", "Usability testing"]],
+  ["Product", ["User research", "Requirement gathering", "PRDs", "Prioritisation", "Agile / Scrum", "Metrics & KPIs", "AI evaluation", "Hypothesis testing", "Usability testing"]],
   ["Go-to-market", ["Market research", "Market segmentation", "ICP & buyer personas", "Prospect prioritisation", "B2B SaaS positioning"]],
   ["AI / ML", ["Gemini API integration", "Prompt engineering", "LLM output evaluation", "Tone classification", "Claude & AI workflow tools"]],
-  ["Data", ["SQL (MySQL, PostgreSQL)", "Excel & Google Sheets", "Pivot tables & formulas"]],
+  ["Data", ["Data analysis", "SQL (MySQL, PostgreSQL)", "Excel & Google Sheets", "Pivot tables & formulas"]],
   ["Engineering", ["Python", "Java", "C++", "JavaScript", "React", "Node.js", "Express", "Spring Boot", "AWS", "Git", "Postman"]],
-  ["Leadership", ["Team leadership", "Project management", "Strategic planning", "Public speaking", "Community outreach", "Budgeting"]],
+  ["Leadership", ["Team leadership", "Cross-functional coordination", "Technical talks & workshops", "Project management", "Strategic planning", "Public speaking", "Community outreach", "Budgeting"]],
 ];
 
 export const certs = [
