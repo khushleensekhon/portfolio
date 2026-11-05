@@ -1,11 +1,13 @@
 ---
-interface Props { p: { t: string; y: string; d: string; tags: string[]; l: string; lt: string } }
-const { p } = Astro.props;
+import type { Project } from "../data/site";
+interface Props { p: Project; detailed?: boolean }
+const { p, detailed = false } = Astro.props;
 ---
 <div class="card">
   <span class="meta">{p.y}</span>
   <h3>{p.t}</h3>
   <p>{p.d}</p>
+  {detailed && p.points && <ul class="role-points">{p.points.map((x) => <li>{x}</li>)}</ul>}
   <div class="tags">{p.tags.map((x) => <span class="tag">{x}</span>)}</div>
-  <a class="link" href={p.l} target="_blank" rel="noopener">{p.lt} ↗</a>
+  {p.l && <a class="link" href={p.l} target="_blank" rel="noopener">{p.lt ?? "Open"} ↗</a>}
 </div>

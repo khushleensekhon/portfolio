@@ -215,3 +215,4 @@ footer a{color:var(--muted);text-decoration:none}footer a:hover{color:var(--acce
 .role-points{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:6px;max-width:72ch}
 .role-points strong{color:var(--fg)}
 .tenure-head h3{font-size:22px}
+.card .role-points{font-size:15px}

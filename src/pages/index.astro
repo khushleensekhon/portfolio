@@ -50,7 +50,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort((a, 
 
   <section class="block">
     <div class="block-head"><div><span class="eyebrow">Featured work</span><h2>Projects</h2></div><a class="more" href="/projects">All projects →</a></div>
-    <div class="grid g3">{projects.map((p) => <ProjectCard p={p} />)}</div>
+    <div class="grid g3">{projects.slice(0, 3).map((p) => <ProjectCard p={p} />)}</div>
   </section>
 
   <div class="grid g2">

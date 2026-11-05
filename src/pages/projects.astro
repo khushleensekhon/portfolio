@@ -4,6 +4,6 @@ import ProjectCard from "../components/ProjectCard.astro";
 import { projects } from "../data/site";
 ---
 <Base title="Projects">
-  <div class="page-head"><span class="eyebrow">Projects</span><h2>Products I've built</h2><p>Full-stack builds where I owned the product from requirements to deployment.</p></div>
-  <div class="grid g3">{projects.map((p) => <ProjectCard p={p} />)}</div>
+  <div class="page-head"><span class="eyebrow">Projects</span><h2>Products I've built</h2><p>Each one started with a user problem. I owned them from research and requirements to launch.</p></div>
+  <div class="grid g2">{projects.map((p) => <ProjectCard p={p} detailed />)}</div>
 </Base>
